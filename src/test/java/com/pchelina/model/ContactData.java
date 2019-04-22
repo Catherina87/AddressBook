@@ -1,4 +1,4 @@
-package com.pchelina;
+package com.pchelina.model;
 
 public class ContactData {
     private String firstName;
@@ -9,9 +9,10 @@ public class ContactData {
     private String address;
     private String phone;
     private String email;
+    private String group;
 
     public ContactData(String firstName, String lastname, String nickName, String title, String company, String address,
-                       String phone, String email) {
+                       String phone, String email, String group) {
         this.firstName = firstName;
         this.lastName = lastname;
         this.nickName = nickName;
@@ -20,6 +21,12 @@ public class ContactData {
         this.address = address;
         this.phone = phone;
         this.email = email;
+        this.group = group;
+    }
+
+    public ContactData(String firstName, String lastName) {
+        this.firstName = firstName;
+        this.lastName = lastName;
     }
 
     public String getFirstName() {
@@ -52,6 +59,10 @@ public class ContactData {
 
     public String getEmail() {
         return email;
+    }
+
+    public String getGroup() {
+        return group;
     }
 
 }

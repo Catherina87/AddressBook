@@ -1,4 +1,4 @@
-package com.pchelina;
+package com.pchelina.model;
 
 public class GroupData {
     private final String name;
