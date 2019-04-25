@@ -2,9 +2,7 @@ package com.pchelina.appmanager;
 
 import com.pchelina.model.ContactData;
 import org.openqa.selenium.By;
-import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 
@@ -25,13 +23,15 @@ public class ContactHelper extends HelperBase{
         type(By.xpath("//input[@name='title']"), data.getTitle());
         type(By.xpath("//input[@name='company']"), data.getCompany());
         type(By.xpath("//textarea[@name='address']"), data.getAddress());
-        type(By.xpath("//input[@name='mobile']"), data.getPhone());
+        type(By.xpath("//input[@name='mobile']"), String.valueOf(data.getPhoneId()));
         type(By.xpath("//input[@name='email']"), data.getEmail());
 
-        if(creation) {
-            new Select(wd.findElement(By.name("new_group"))).selectByVisibleText(data.getGroup());
-        } else{
-            Assert.assertFalse(isElementPresent(By.name("new_group")));
+        if (data.getGroup() != null) {
+            if(creation) {
+                new Select(wd.findElement(By.name("new_group"))).selectByVisibleText(data.getGroup());
+            } else {
+                Assert.assertFalse(isElementPresent(By.name("new_group")));
+            }
         }
     }
 

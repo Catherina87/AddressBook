@@ -7,19 +7,19 @@ public class ContactData {
     private String title;
     private String company;
     private String address;
-    private String phone;
+    private int phoneId;
     private String email;
     private String group;
 
     public ContactData(String firstName, String lastname, String nickName, String title, String company, String address,
-                       String phone, String email, String group) {
+                       int phoneId, String email, String group) {
         this.firstName = firstName;
         this.lastName = lastname;
         this.nickName = nickName;
         this.title = title;
         this.company = company;
         this.address = address;
-        this.phone = phone;
+        this.phoneId = phoneId;
         this.email = email;
         this.group = group;
     }
@@ -53,8 +53,8 @@ public class ContactData {
         return address;
     }
 
-    public String getPhone() {
-        return phone;
+    public int getPhoneId() {
+        return phoneId;
     }
 
     public String getEmail() {
